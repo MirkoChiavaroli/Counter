@@ -5,7 +5,8 @@ import Reset from "./components/Reset";
 import AddCounter from "./components/AddCounter";
 
 function App() {
-  const [counter, setCounter] = useState([0]); // counter è il valore, setCounter è il valore che cambia, useState è la funzione, che in questo caso parte da 0 e che alimenteremo
+  const [counter, setCounter] = useState([0, 0]);
+  let [newCounter] = useState(); // counter è il valore, setCounter è il valore che cambia, useState è la funzione, che in questo caso parte da 0 e che alimenteremo
   return (
     <div>
       <div className="container">

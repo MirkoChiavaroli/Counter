@@ -1,4 +1,4 @@
-const AddCounter = ({ newCounter }) => {
+const AddCounter = ({ counter, setCounter, newCounter }) => {
   return (
     <div>
       {counter.map((counter, index) => {
@@ -10,7 +10,7 @@ const AddCounter = ({ newCounter }) => {
           const counter = [...newCounter];
           newCounter.push(0);
 
-          setCounter(newCounter);
+          setCounter(counter);
         }}
       >
         ADD COUNTER

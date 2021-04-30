@@ -2,12 +2,14 @@ import "./App.css";
 // importo funzione per rendere dinamica pagina da react
 import { useState } from "react";
 import Reset from "./components/Reset";
+import AddCounter from "./components/AddCounter";
 
 function App() {
-  const [counter, setCounter] = useState(0); // counter è il valore, setCounter è il valore che cambia, useState è la funzione, che in questo caso parte da 0 e che alimenteremo
+  const [counter, setCounter] = useState([0]); // counter è il valore, setCounter è il valore che cambia, useState è la funzione, che in questo caso parte da 0 e che alimenteremo
   return (
-    <div className="container">
-      <div>
+    <div>
+      <div className="container">
+        <AddCounter newCounter={newCounter} />
         <button
           onClick={() => {
             setCounter(counter - 1);
@@ -25,15 +27,8 @@ function App() {
         >
           <span>+</span>
         </button>
-        {/* <button
-          onClick={() => {
-            setCounter(0);
-          }}
-          // onClick è la funzione reset valore(counter) +1 ad ogni click passando per la funzione setCounter
-        >
-          RESET
-        </button> */}
-        <Reset />
+
+        <Reset setCounter={setCounter} counter={counter} />
       </div>
     </div>
   );

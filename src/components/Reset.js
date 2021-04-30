@@ -1,6 +1,6 @@
 // const [counter, setCounter] = useState(0);
 
-const Reset = (setCounter) => {
+const Reset = ({ counter, setCounter }) => {
   return (
     <button
       className="reset"
